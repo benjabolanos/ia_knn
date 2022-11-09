@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class ArchivoUtil {
 
-    private final ArrayList<Float[]> contenidoArchivo;
+    private final ArrayList<Double[]> contenidoArchivo;
     private final String rutaArchivo;
     private final int cantidadColumnas;
 
@@ -25,9 +25,9 @@ public class ArchivoUtil {
             String[] contenidoLinea;
 
             while((contenidoLinea = reader.readNext()) != null){
-                Float[] contenidoLineaF = new Float[cantidadColumnas];
+                Double[] contenidoLineaF = new Double[cantidadColumnas];
                 for(int i = 0; i <  cantidadColumnas ; i++){
-                    contenidoLineaF[i] = Float.parseFloat(contenidoLinea[i]);
+                    contenidoLineaF[i] = Double.parseDouble(contenidoLinea[i]);
                 }
                 contenidoArchivo.add(contenidoLineaF);
             }
@@ -37,7 +37,7 @@ public class ArchivoUtil {
         }
     }
 
-    public ArrayList<Float[]> getContenidoArchivo(){
+    public ArrayList<Double[]> getContenidoArchivo(){
         return contenidoArchivo;
     }
 }
